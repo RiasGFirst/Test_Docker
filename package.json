@@ -1,0 +1,22 @@
+{
+  "name": "testdocker",
+  "version": "0.0.1",
+  "description": "Simple Test for dockerization",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiasGFirst/Test_Docker.git"
+  },
+  "author": "riasg.first",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RiasGFirst/Test_Docker/issues"
+  },
+  "homepage": "https://github.com/RiasGFirst/Test_Docker#readme",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
