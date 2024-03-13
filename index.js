@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
         console.error('Error reading config file', e);
     }
 
-    res.send(`Hello ${process.env.NAME || "Anonymous"} on ${config?.title || 'Default Title'}!`);
+    res.send(`Hello ${process.env.NAME || "Anonymous"} on ${config.title || 'Default Title'}!`);
 });
 
 app.listen(port, () => {
