@@ -5,10 +5,6 @@ const app = express();
 const port = 8080;
 
 
-const configFilePath = path.resolve(__dirname, 'config/');
-console.log(configFilePath);
-let config;
-
 app.get('/', (req, res) => {
     const configFilePath = path.resolve(__dirname, 'config/' + (process.env.NODE_ENV || 'development') + '.json');
     let config;
@@ -23,13 +19,20 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Test App listening at http://localhost:${port}`);
-});
-// app.get('/', (req, res) => {
-//     res.send(`Hello ${process.env.NAME || "Anonymous"}!`);
-//     const configFilePath = path.resolve(__dirname, '../config/' + (process.env.NODE_ENV || 'development') + '.json');
-//     let config;
-// });
+    // List all files in the current directory and config directory
 
-// app.listen(port, () => {
-//     console.log(`Example app listening at http://localhost:${port}`);
-// });
+    fs.readdir(__dirname, (err, files) => {
+        if (err) {
+            return;
+        }
+        console.log('Files in current directory:', files);
+    });
+
+    fs.readdir(path.resolve(__dirname, 'config'), (err, files) => {
+        if (err) {
+            return;
+        }
+        console.log('Files in config directory:', files);
+    });
+
+});
