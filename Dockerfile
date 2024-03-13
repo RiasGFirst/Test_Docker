@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app
 RUN npm install
 RUN mkdir -p /app/config
-COPY config/.example.json /app/config/development.json
+COPY config/development.json /app/config/
 EXPOSE 8080
 
 CMD ["node", "index.js"]
